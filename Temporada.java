@@ -1,19 +1,39 @@
+
+import java.util.ArrayList;
+
 public class Temporada {
-    private final int cantidadEpisodios;
-    private int episodiosVistos;
-    private int temporada;
+    private int numeroTemporada;
+    private ArrayList<Episodio> episodios;
 
-    public Temporada() {
-        this.cantidadEpisodios = 0;
-        this.episodiosVistos = 0;
+    // constructor
+    public Temporada(int numeroTemporada) {
+        this.numeroTemporada = numeroTemporada;
+        this.episodios = new ArrayList<>();
     }
 
-    public void setEpisodioVistos() {
-        this.episodiosVistos += 1;
+    // metodos
+    public int calcularEpidosdiosVistosTemporada(int numeroTemporada) {
+        int vistos = 0;
+        for (Episodio e : episodios) {
+            if (e.getVisto()) {
+                vistos++;
+            }
+        }
+        return vistos;
     }
 
-    // Getters y Setters
-    public int getCantidadEpisodios() {
-        return this.cantidadEpisodios;
+    public double calcularPromedioCalificacionesTemporada(int numeroTemporada) {
+        double cantidadEpisodios = 0;
+        double total = 0;
+        for (Episodio e : episodios) {
+            cantidadEpisodios++;
+            total += e.getCalificacion();
+        }
+        return total / cantidadEpisodios;
+    }
+
+    // getters y setters
+    public int getNumeroTemporada() {
+        return this.numeroTemporada;
     }
 }

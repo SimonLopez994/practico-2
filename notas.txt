@@ -1,0 +1,1 @@
+Para determinar que metodo pertenece a que clase hay que pensar que un metodo deb ir en la clase que tenga la informacon necesaria para resolver lo que se pide.
